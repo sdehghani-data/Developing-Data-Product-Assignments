@@ -1,0 +1,20 @@
+---
+title: "shiraz map"
+author: "Sanaz Dehghani"
+date: "6/19/2021"
+output: html_document
+---
+
+
+With the aim of creating a web page using R Markdown that features a map created with Leaflet as week 2 assignment I will introduce you my lovely city "Shiraz" in the interactive map that shows its location.
+
+```{r setup, echo=TRUE}
+library(leaflet)
+shiraz <- leaflet() %>%
+  addTiles() %>%
+addMarkers(lat=29.61462461898951, lng=52.54778869912209, popup = "lovely city")
+
+shiraz
+```
+
+
