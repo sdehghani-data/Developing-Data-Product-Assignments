@@ -1,0 +1,26 @@
+---
+title: "Week 3 Assignment-Plotly Presentation"
+author: "Sanaz Dehghani"
+date: "6/24/2021"
+output:
+  ioslides_presentation: default
+  slidy_presentation: default
+---
+##Gender Gap in Earnings per University
+
+Our plotly made plot which is interactive is about the difference of male and females count in different US schools like MIT, stanford , ... .
+##Here is a plotly made plot
+```{r,echo=TRUE,message=FALSE}
+library(plotly)
+
+data <- read.csv("https://raw.githubusercontent.com/plotly/datasets/master/school_earnings.csv")
+
+fig <- plot_ly(data, x = ~Women, y = ~Men, text = ~School, type = 'scatter', mode = 'markers', color = ~Gap, colors = 'Reds',
+        marker = list(size = ~Gap, opacity = 0.5))
+fig <- fig %>% layout(title = 'Gender Gap in Earnings per University',
+         xaxis = list(showgrid = FALSE),
+         yaxis = list(showgrid = FALSE))
+
+fig
+```
+## THANKS for Reviewing my Assignment. 
